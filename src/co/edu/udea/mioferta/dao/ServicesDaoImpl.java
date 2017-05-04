@@ -1,9 +1,12 @@
 package co.edu.udea.mioferta.dao;
 
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
+import co.edu.udea.mioferta.dto.Tanda;
 
 
 /**
@@ -11,7 +14,7 @@ import co.edu.udea.mioferta.dto.Programa;
  * de momento se quemaran los datos y solo se tendra informacion de 2 estudiantes
  * @author Santiago
  */
-public class ServiciosDao implements ServicesDao {
+public class ServicesDaoImpl implements ServicesDao {
     // cedulas quemadas para suponer que estan el la base de datos
     private  String cedulaEstudiante1 = "101700";
     private  String cedulaEstudiante2 = "101701";
@@ -32,6 +35,22 @@ public class ServiciosDao implements ServicesDao {
         }
         
         return programas;
+    }
+
+    
+
+    public Tanda obtenerTanda(String cedulaEstudiante, Long semestre) {
+        Tanda tanda = null;
+        Date fecha = Date.from(Instant.now());
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+        	tanda=new Tanda(15,"Tanda juanita",fecha,fecha,fecha);
+        }else{
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
+                tanda=new Tanda(22,"Tanda pepita",fecha,fecha,fecha);
+            }
+            // no existe esa cedula en la base de datos
+        }
+        return tanda;
     }
 
 }

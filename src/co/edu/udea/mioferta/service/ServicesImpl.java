@@ -12,10 +12,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import co.edu.udea.mioferta.dao.ServicesDao;
-import co.edu.udea.mioferta.dao.ServiciosDao;
+import co.edu.udea.mioferta.dao.ServicesDaoImpl;
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.service.Services;
 import co.edu.udea.mioferta.service.ServicesImpl;
+import co.edu.udea.mioferta.dto.Tanda;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -27,7 +28,7 @@ import net.sf.json.JSONObject;
 @Path("/MiOferta")
 public class ServicesImpl implements Services {
 	
-    private final ServicesDao SERVICIO_DAO = new ServiciosDao();
+    private final ServicesDao SERVICIO_DAO = new ServicesDaoImpl();
     
     JSONArray jsonArray;
     
@@ -48,6 +49,21 @@ public class ServicesImpl implements Services {
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     	
+        return respuesta;
+    }
+
+    @GET
+    @Path("/obtenerTanda/{cedulaEstudiante}/{semestre}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerTanda(@PathParam("cedulaEstudiante") String cedulaEstudiante,@PathParam("semestre")Long semestre) {
+        Response respuesta = null;
+        try {
+            Tanda tanda  = SERVICIO_DAO.obtenerTanda(cedulaEstudiante,semestre);
+            respuesta = Response.ok(tanda).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return respuesta;
     }
 

@@ -3,6 +3,7 @@ package co.edu.udea.mioferta.dao;
 import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
+import co.edu.udea.mioferta.dto.Tanda;
 
 /**
  * 
@@ -17,4 +18,14 @@ public interface ServicesDao {
      * @return 
      */
     public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
+    
+    /**
+     * retorna la tanda en el programa/semestre, no está creado, deberá retornar 
+     * la estructura: numerotanda, fecha, hora
+     * 
+     * @param cedulaEstudiante
+     * @return 
+     */
+    public Tanda obtenerTanda(String cedulaEstudiante,Long Semestre);
+    
 }
