@@ -18,7 +18,7 @@
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>co.edu.udea.mioferta.helloworld</param-value>
+			<param-value>co.edu.udea.mioferta.service</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
