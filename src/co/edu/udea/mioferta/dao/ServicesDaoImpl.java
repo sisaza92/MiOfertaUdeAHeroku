@@ -7,6 +7,7 @@ import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.dto.Tanda;
+import co.edu.udea.mioferta.dto.Estudiante;
 
 
 /**
@@ -37,8 +38,6 @@ public class ServicesDaoImpl implements ServicesDao {
         return programas;
     }
 
-    
-
     public Tanda obtenerTanda(String cedulaEstudiante, Long semestre) {
         Tanda tanda = null;
         Date fecha = Date.from(Instant.now());
@@ -51,6 +50,21 @@ public class ServicesDaoImpl implements ServicesDao {
             // no existe esa cedula en la base de datos
         }
         return tanda;
+    }
+
+    public Estudiante obternerInfoEstudiante(String cedulaEstudiante) {
+        
+    	Estudiante estudiante = null;
+        
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "", "");
+        }else{
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
+                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "", "");
+            }
+            // no existe esa cedula en la base de datos
+        }
+        return estudiante;
     }
 
 }

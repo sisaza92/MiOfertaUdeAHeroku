@@ -4,6 +4,7 @@ import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.dto.Tanda;
+import co.edu.udea.mioferta.dto.Estudiante;
 
 /**
  * 
@@ -27,5 +28,12 @@ public interface ServicesDao {
      * @return 
      */
     public Tanda obtenerTanda(String cedulaEstudiante,Long Semestre);
+    
+    /**
+     * Retorna la información de un estudiante dada su cédula
+     * @param cedulaEstudiante
+     * @return 
+     */
+    public Estudiante obternerInfoEstudiante(String cedulaEstudiante ); 
     
 }

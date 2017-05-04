@@ -16,6 +16,7 @@ import co.edu.udea.mioferta.dao.ServicesDaoImpl;
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.service.Services;
 import co.edu.udea.mioferta.service.ServicesImpl;
+import co.edu.udea.mioferta.dto.Estudiante;
 import co.edu.udea.mioferta.dto.Tanda;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -49,6 +50,22 @@ public class ServicesImpl implements Services {
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     	
+        return respuesta;
+    }
+
+    @GET
+    @Path("/obtenerInfoEstudiante/{cedulaEstudiante}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerInfoEstudiante(String cedulaEstudiante) {
+        Response respuesta = null;
+        try {
+            Estudiante estudiante = SERVICIO_DAO.obternerInfoEstudiante(cedulaEstudiante);
+            respuesta = Response.ok(estudiante).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return respuesta;
     }
 
