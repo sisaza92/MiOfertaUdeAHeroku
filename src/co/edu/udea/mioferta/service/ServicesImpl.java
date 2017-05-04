@@ -32,6 +32,7 @@ public class ServicesImpl implements Services {
     private final ServicesDao SERVICIO_DAO = new ServicesDaoImpl();
     
     JSONArray jsonArray;
+    JSONObject jsonObject;
     
     @GET
     @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
@@ -56,14 +57,14 @@ public class ServicesImpl implements Services {
     @GET
     @Path("/obtenerInfoEstudiante/{cedulaEstudiante}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerInfoEstudiante(String cedulaEstudiante) {
+    public Response obtenerInfoEstudiante(@PathParam("cedulaEstudiante") String cedulaEstudiante) {
         Response respuesta = null;
         try {
             Estudiante estudiante = SERVICIO_DAO.obternerInfoEstudiante(cedulaEstudiante);
-            respuesta = Response.ok(estudiante).build();
+            jsonObject = JSONObject.fromObject(estudiante);
+            respuesta = Response.ok(jsonObject.toString()).build();
             
         } catch (ExceptionInInitializerError ex) {
-            // que hace
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
@@ -76,7 +77,8 @@ public class ServicesImpl implements Services {
         Response respuesta = null;
         try {
             Tanda tanda  = SERVICIO_DAO.obtenerTanda(cedulaEstudiante,semestre);
-            respuesta = Response.ok(tanda).build();
+            jsonObject = JSONObject.fromObject(tanda);
+            respuesta = Response.ok(jsonObject.toString()).build();
             
         } catch (ExceptionInInitializerError ex) {
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
