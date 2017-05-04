@@ -19,6 +19,15 @@ public interface ServicesDao {
      * @return 
      */
     public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
+
+    /**
+     * retorna la lista de materias ofertadas al estudiante
+     * @param cedulaEstudiante
+     * @param programa
+     * @param semestre
+     * @return 
+     */
+    public List obtenerMateriasOfertadas(String cedulaEstudiante, String programa, String semestre);
     
     /**
      * retorna la tanda en el programa/semestre, no está creado, deberá retornar 

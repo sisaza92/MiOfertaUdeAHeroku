@@ -7,6 +7,7 @@ import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.dto.Tanda;
+import co.edu.udea.mioferta.dto.MateriaOfertada;
 import co.edu.udea.mioferta.dto.Estudiante;
 
 
@@ -26,8 +27,8 @@ public class ServicesDaoImpl implements ServicesDao {
         
         List<Programa> programas = new ArrayList();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            programas.add(new Programa(504, "Ingeniería de Sistemas", "Activo", "2016-1"));
-            programas.add(new Programa(104, "Administración de Empresas", "Cancelado", "2016-1"));
+            programas.add(new Programa(504, "Ingeniería de Sistemas", "Activo", "20161"));
+            programas.add(new Programa(104, "Administración de Empresas", "Cancelado", "20161"));
         }else{
             if (cedulaEstudiante.equals(cedulaEstudiante2)) {
                 programas.add(new Programa(533, "Ingeniería civil", "Activo", "2016-1"));
@@ -36,6 +37,25 @@ public class ServicesDaoImpl implements ServicesDao {
         }
         
         return programas;
+    }
+
+    public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String idPrograma, String semestre) {
+       //supongamos que esta es la que retorna la oferta por que la otra retorna es lo que esta cursando
+       List<MateriaOfertada> materiasOfertadas = new ArrayList();
+        
+        if (cedulaEstudiante.equals(cedulaEstudiante1) && idPrograma.equals("504")) {
+            materiasOfertadas.add(new MateriaOfertada("2508107","LOGICA Y REPRESENTACION I", 4));
+            materiasOfertadas.add(new MateriaOfertada("2508111","MATEMATICAS DISCRETAS I", 4));
+            materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
+        }else{
+            if (cedulaEstudiante.equals(cedulaEstudiante2) && idPrograma.equals("533")) {
+                materiasOfertadas.add(new MateriaOfertada("2536200","FISICA MECANICA", 4));
+                materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
+                materiasOfertadas.add(new MateriaOfertada("2517350","FORMAC CIUDADANA Y CONST.", 0));
+            }
+            // no existe esa cedula en la base de datos
+        }
+        return materiasOfertadas;
     }
 
     public Tanda obtenerTanda(String cedulaEstudiante, Long semestre) {
