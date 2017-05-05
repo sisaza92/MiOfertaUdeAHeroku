@@ -16,6 +16,7 @@ import co.edu.udea.mioferta.dao.ServicesDaoImpl;
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.service.Services;
 import co.edu.udea.mioferta.service.ServicesImpl;
+import co.edu.udea.mioferta.dto.Impedimento;
 import co.edu.udea.mioferta.dto.Grupo;
 import co.edu.udea.mioferta.dto.MateriaOfertada;
 import co.edu.udea.mioferta.dto.Estudiante;
@@ -119,6 +120,23 @@ public class ServicesImpl implements Services {
             respuesta = Response.ok(jsonObject.toString()).build();
             
         } catch (ExceptionInInitializerError ex) {
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
+    }
+
+    @GET
+    @Path("/obtenerImpedimentos/{cedulaEstudiante}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") String cedulaEstudiante) {
+        Response respuesta = null;
+        try {
+            List<Impedimento> impedimentos  = SERVICIO_DAO.obtenerImpedimentos(cedulaEstudiante);
+            jsonArray = jsonArray.fromObject(impedimentos);
+            respuesta = Response.ok(jsonArray.toString()).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;

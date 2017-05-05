@@ -7,6 +7,7 @@ import java.util.List;
 
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.dto.Tanda;
+import co.edu.udea.mioferta.dto.Impedimento;
 import co.edu.udea.mioferta.dto.Grupo;
 import co.edu.udea.mioferta.dto.MateriaOfertada;
 import co.edu.udea.mioferta.dto.Estudiante;
@@ -38,6 +39,21 @@ public class ServicesDaoImpl implements ServicesDao {
         }
         
         return programas;
+    }
+
+    public Estudiante obternerInfoEstudiante(String cedulaEstudiante) {
+        
+    	Estudiante estudiante = null;
+        
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "", "");
+        }else{
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
+                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "", "");
+            }
+            // no existe esa cedula en la base de datos
+        }
+        return estudiante;
     }
 
     public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String idPrograma, String semestre) {
@@ -111,19 +127,13 @@ public class ServicesDaoImpl implements ServicesDao {
         return tanda;
     }
 
-    public Estudiante obternerInfoEstudiante(String cedulaEstudiante) {
-        
-    	Estudiante estudiante = null;
-        
+    public List<Impedimento> obtenerImpedimentos(String cedulaEstudiante) {
+        List<Impedimento> impedimentos = new ArrayList();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "", "");
-        }else{
-            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
-                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "", "");
-            }
-            // no existe esa cedula en la base de datos
+            impedimentos.add(new Impedimento("2016-1","No pago de matricula"));
+            impedimentos.add(new Impedimento("2016-1","No ha devuelto libro"));
         }
-        return estudiante;
+        return impedimentos;
     }
 
 }

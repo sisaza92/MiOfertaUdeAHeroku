@@ -21,6 +21,13 @@ public interface ServicesDao {
     public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
 
     /**
+     * Retorna la información de un estudiante dada su cédula
+     * @param cedulaEstudiante
+     * @return 
+     */
+    public Estudiante obternerInfoEstudiante(String cedulaEstudiante ); 
+    
+    /**
      * retorna la lista de materias ofertadas al estudiante
      * @param cedulaEstudiante
      * @param programa
@@ -47,10 +54,11 @@ public interface ServicesDao {
     public Tanda obtenerTanda(String cedulaEstudiante,Long Semestre);
     
     /**
-     * Retorna la información de un estudiante dada su cédula
+     * retorna los impedimientos el programa, no está creado, deberá retornar la 
+     * estructura: semestre, impedimiento
      * @param cedulaEstudiante
      * @return 
      */
-    public Estudiante obternerInfoEstudiante(String cedulaEstudiante ); 
+    public List obtenerImpedimentos(String cedulaEstudiante);
     
 }
