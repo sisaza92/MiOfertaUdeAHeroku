@@ -16,6 +16,7 @@ import co.edu.udea.mioferta.dao.ServicesDaoImpl;
 import co.edu.udea.mioferta.dto.Programa;
 import co.edu.udea.mioferta.service.Services;
 import co.edu.udea.mioferta.service.ServicesImpl;
+import co.edu.udea.mioferta.dto.Grupo;
 import co.edu.udea.mioferta.dto.MateriaOfertada;
 import co.edu.udea.mioferta.dto.Estudiante;
 import co.edu.udea.mioferta.dto.Tanda;
@@ -64,6 +65,24 @@ public class ServicesImpl implements Services {
         try {
             List<MateriaOfertada> oferta  = SERVICIO_DAO.obtenerMateriasOfertadas(cedulaEstudiante,idPrograma,"");
             jsonArray = jsonArray.fromObject(oferta);
+            respuesta = Response.ok(jsonArray.toString()).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
+        
+    }
+    
+    @GET
+    @Path("/obtenerGrupos/{codigoMateria}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerGrupos(@PathParam("codigoMateria") String codigoMateria) {
+        
+    	Response respuesta = null;
+        try {
+            List<Grupo> grupos  = SERVICIO_DAO.obtenerGrupos(codigoMateria);
+            jsonArray = jsonArray.fromObject(grupos);
             respuesta = Response.ok(jsonArray.toString()).build();
             
         } catch (ExceptionInInitializerError ex) {
