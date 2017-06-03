@@ -39,15 +39,15 @@ public class ServicesImpl implements Services {
     JSONObject jsonObject;
     
     @GET
-    @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
+    @Path("/obtenerProgramas/{cedulaEstudiante}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerProgramaYUltimoSemestre(@PathParam("cedulaEstudiante") String cedulaEstudiante) {
+    public Response obtenerProgramas(@PathParam("cedulaEstudiante") String cedulaEstudiante) {
         
     	Response respuesta = null;
     	
     	try {
     		
-            List<Programa> programas  = SERVICIO_DAO.obtenerProgramaYUltimoSemestre(cedulaEstudiante);
+            List<Programa> programas  = SERVICIO_DAO.obtenerProgramas(cedulaEstudiante);
             jsonArray = JSONArray.fromObject(programas);
             respuesta = Response.ok(jsonArray.toString()).build();
             
@@ -93,6 +93,9 @@ public class ServicesImpl implements Services {
         
     }
 
+    /**
+     * Servicio basado en el index:9 del documento: DefinicionServiciosMARES Cliente(2).xls
+     */
     @GET
     @Path("/obtenerInfoEstudiante/{cedulaEstudiante}")
     @Produces(MediaType.APPLICATION_JSON)

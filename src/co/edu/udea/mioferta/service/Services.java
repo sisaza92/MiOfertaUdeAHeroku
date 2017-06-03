@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 */
 public interface Services {
     
-    public Response obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
+    public Response obtenerProgramas(String cedulaEstudiante);
     
     public Response obtenerInfoEstudiante(String cedulaEstudiante);
     

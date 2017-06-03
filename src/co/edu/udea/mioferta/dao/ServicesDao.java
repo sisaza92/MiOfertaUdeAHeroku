@@ -18,7 +18,7 @@ public interface ServicesDao {
      * @param cedulaEstudiante
      * @return 
      */
-    public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
+    public List<Programa> obtenerProgramas(String cedulaEstudiante);
 
     /**
      * Retorna la información de un estudiante dada su cédula
