@@ -25,15 +25,15 @@ public class ServicesDaoImpl implements ServicesDao {
     
     //Ojo validar los datos que ingresan 
     
-    public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante) {
+    public List<Programa> obtenerProgramas(String cedulaEstudiante) {
         
         List<Programa> programas = new ArrayList();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            programas.add(new Programa(504, "Ingeniería de Sistemas", "Activo", "20161"));
-            programas.add(new Programa(104, "Administración de Empresas", "Cancelado", "20161"));
+            programas.add(new Programa((long) 504, "Ingeniería de Sistemas", "Activo"));
+            programas.add(new Programa((long) 104, "Administración de Empresas", "Cancelado"));
         }else{
             if (cedulaEstudiante.equals(cedulaEstudiante2)) {
-                programas.add(new Programa(533, "Ingeniería civil", "Activo", "2016-1"));
+                programas.add(new Programa((long) 533, "Ingeniería civil", "Activo"));
             }
             // no existe esa cedula en la base de datos
         }
