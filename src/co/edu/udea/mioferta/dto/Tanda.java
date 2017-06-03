@@ -13,28 +13,28 @@ import java.util.Date;
  */
 public class Tanda {
     
-    private int nroTanda;
+    private Long numero;
     private String nombre;
-    private Date fecha;
-    private Date horaIncial;
-    private Date horafinal;
+    private String fecha;
+    private Integer horaIncial;
+    private Integer horafinal;
     
     
-    public Tanda(int nroTanda, String nombre, Date fecha, Date horaIncial, Date horafinal) {
+    public Tanda(Long nroTanda, String nombre, String fecha, Integer horaIncial, Integer horafinal) {
 		super();
-		this.nroTanda = nroTanda;
+		this.numero = nroTanda;
 		this.nombre = nombre;
 		this.fecha = fecha;
 		this.horaIncial = horaIncial;
 		this.horafinal = horafinal;
 	}
 
-	public int getNroTanda() {
-        return nroTanda;
+	public Long getNroTanda() {
+        return numero;
     }
 
-    public void setNroTanda(int nroTanda) {
-        this.nroTanda = nroTanda;
+    public void setNroTanda(Long nroTanda) {
+        this.numero = nroTanda;
     }
     
     public String getNombre() {
@@ -45,27 +45,27 @@ public class Tanda {
 		this.nombre = nombre;
 	}
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-	public Date getHoraIncial() {
+	public Integer getHoraIncial() {
 		return horaIncial;
 	}
 
-	public void setHoraIncial(Date horaIncial) {
+	public void setHoraIncial(Integer horaIncial) {
 		this.horaIncial = horaIncial;
 	}
 
-	public Date getHorafinal() {
+	public Integer getHorafinal() {
 		return horafinal;
 	}
 
-	public void setHorafinal(Date horafinal) {
+	public void setHorafinal(Integer horafinal) {
 		this.horafinal = horafinal;
 	}
     
