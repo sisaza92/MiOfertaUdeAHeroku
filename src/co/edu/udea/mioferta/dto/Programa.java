@@ -6,25 +6,23 @@ package co.edu.udea.mioferta.dto;
  */
 public class Programa {
     
-    private int codigoPrograma;
+    private Long codigoPrograma;
     private String nombrePrograma;
     private String estado;
-    private String ultimoSemestre;
 
-    public Programa(int codigoPrograma, String nombrePrograma, String estado, String ultimoSemestre) {
+    public Programa(Long codigoPrograma, String nombrePrograma, String estado) {
         this.codigoPrograma = codigoPrograma;
         this.nombrePrograma = nombrePrograma;
         this.estado = estado;
-        this.ultimoSemestre = ultimoSemestre;
     }
 
     
     
-    public int getCodigoPrograma() {
+    public Long getCodigoPrograma() {
         return codigoPrograma;
     }
 
-    public void setCodigoPrograma(int codigoPrograma) {
+    public void setCodigoPrograma(Long codigoPrograma) {
         this.codigoPrograma = codigoPrograma;
     }
 
@@ -42,14 +40,6 @@ public class Programa {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public String getUltimoSemestre() {
-        return ultimoSemestre;
-    }
-
-    public void setUltimoSemestre(String ultimoSemestre) {
-        this.ultimoSemestre = ultimoSemestre;
     }
     
     
