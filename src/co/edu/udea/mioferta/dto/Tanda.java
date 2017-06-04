@@ -29,44 +29,54 @@ public class Tanda {
 		this.horaFinal = horaFinal;
 	}
 
-	public Long getNroTanda() {
-        return numero;
-    }
 
-    public void setNroTanda(Long nroTanda) {
-        this.numero = nroTanda;
-    }
-    
-    public String getNombre() {
+	public Long getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(Long numero) {
+		this.numero = numero;
+	}
+
+
+	public String getNombre() {
 		return nombre;
 	}
+
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-    public String getFecha() {
-        return fecha;
-    }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+	public String getFecha() {
+		return fecha;
+	}
+
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
 
 	public Integer getHoraIncial() {
 		return horaIncial;
 	}
 
+
 	public void setHoraIncial(Integer horaIncial) {
 		this.horaIncial = horaIncial;
 	}
 
-	public Integer getHorafinal() {
+
+	public Integer getHoraFinal() {
 		return horaFinal;
 	}
 
-	public void setHorafinal(Integer horafinal) {
-		this.horaFinal = horafinal;
+
+	public void setHoraFinal(Integer horaFinal) {
+		this.horaFinal = horaFinal;
 	}
     
 }
