@@ -19,6 +19,6 @@ public interface Services {
     
     public Response obtenerTanda(String cedulaEstudiante, Long semestre);
     
-    public Response obtenerImpedimentos(String cedulaEstudiante);
+    public Response obtenerImpedimentos(String cedulaEstudiante, Long programa);
     
 }

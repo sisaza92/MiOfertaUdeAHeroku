@@ -127,11 +127,11 @@ public class ServicesDaoImpl implements ServicesDao {
         return tanda;
     }
 
-    public List<Impedimento> obtenerImpedimentos(String cedulaEstudiante) {
-        List<Impedimento> impedimentos = new ArrayList();
+    public List<Impedimento> obtenerImpedimentos(String cedulaEstudiante, Long programa) {
+        List<Impedimento> impedimentos = new ArrayList<Impedimento>();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            impedimentos.add(new Impedimento("2016-1","No pago de matricula"));
-            impedimentos.add(new Impedimento("2016-1","No ha devuelto libro"));
+            impedimentos.add(new Impedimento((long)20161,"Cartera","No pago de matricula"));
+            impedimentos.add(new Impedimento((long)20161,"Biblioteca","No ha devuelto libro"));
         }
         return impedimentos;
     }

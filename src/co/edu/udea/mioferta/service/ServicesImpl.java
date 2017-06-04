@@ -38,6 +38,9 @@ public class ServicesImpl implements Services {
     JSONArray jsonArray;
     JSONObject jsonObject;
     
+    /**
+     * Servicio basado en el index:7 del documento: DefinicionServiciosMARES Cliente(2).xls
+     */
     @GET
     @Path("/obtenerProgramas/{cedulaEstudiante}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -112,6 +115,9 @@ public class ServicesImpl implements Services {
         return respuesta;
     }
 
+    /**
+     * Servicio basado en el index:26 del documento: DefinicionServiciosMARES Cliente(2).xls
+     */
     @GET
     @Path("/obtenerTanda/{cedulaEstudiante}/{semestre}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -128,18 +134,20 @@ public class ServicesImpl implements Services {
         return respuesta;
     }
 
+    /**
+     * Servicio basado en el index:27 del documento: DefinicionServiciosMARES Cliente(2).xls
+     */
     @GET
-    @Path("/obtenerImpedimentos/{cedulaEstudiante}")
+    @Path("/obtenerImpedimentos/{cedulaEstudiante}/{semestre}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") String cedulaEstudiante) {
+    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") String cedulaEstudiante, @PathParam("semestre") Long programa) {
         Response respuesta = null;
         try {
-            List<Impedimento> impedimentos  = SERVICIO_DAO.obtenerImpedimentos(cedulaEstudiante);
+            List<Impedimento> impedimentos  = SERVICIO_DAO.obtenerImpedimentos(cedulaEstudiante,programa);
             jsonArray = jsonArray.fromObject(impedimentos);
             respuesta = Response.ok(jsonArray.toString()).build();
             
         } catch (ExceptionInInitializerError ex) {
-            // que hace
             Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;

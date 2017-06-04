@@ -59,6 +59,6 @@ public interface ServicesDao {
      * @param cedulaEstudiante
      * @return 
      */
-    public List obtenerImpedimentos(String cedulaEstudiante);
+    public List obtenerImpedimentos(String cedulaEstudiante, Long programa);
     
 }
