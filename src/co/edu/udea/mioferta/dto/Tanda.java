@@ -16,16 +16,16 @@ public class Tanda {
     private Long numero;
     private String nombre;
     private String fecha;
-    private Integer horaIncial;
+    private Integer horaInicial;
     private Integer horaFinal;
     
     
-    public Tanda(Long numero, String nombre, String fecha, Integer horaIncial, Integer horaFinal) {
+    public Tanda(Long numero, String nombre, String fecha, Integer horaInicial, Integer horaFinal) {
 		super();
 		this.numero = numero;
 		this.nombre = nombre;
 		this.fecha = fecha;
-		this.horaIncial = horaIncial;
+		this.horaInicial = horaInicial;
 		this.horaFinal = horaFinal;
 	}
 
@@ -60,13 +60,13 @@ public class Tanda {
 	}
 
 
-	public Integer getHoraIncial() {
-		return horaIncial;
+	public Integer getHoraInicial() {
+		return horaInicial;
 	}
 
 
-	public void setHoraIncial(Integer horaIncial) {
-		this.horaIncial = horaIncial;
+	public void setHoraInicial(Integer horaInicial) {
+		this.horaInicial = horaInicial;
 	}
 
 
