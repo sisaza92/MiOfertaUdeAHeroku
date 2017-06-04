@@ -117,10 +117,10 @@ public class ServicesDaoImpl implements ServicesDao {
         Tanda tanda = null;
         Date fecha = Date.from(Instant.now());
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-        	tanda=new Tanda(15,"Tanda juanita",fecha,fecha,fecha);
+        	tanda=new Tanda((long) 36,"nombre de tanda: juanita","26/07/2017",815,830);
         }else{
             if (cedulaEstudiante.equals(cedulaEstudiante2)) {
-                tanda=new Tanda(22,"Tanda pepita",fecha,fecha,fecha);
+                tanda=new Tanda((long) 36,"nombre de tanda: Pepita","25/07/2017",900,915);
             }
             // no existe esa cedula en la base de datos
         }
