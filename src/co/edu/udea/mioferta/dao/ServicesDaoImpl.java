@@ -102,9 +102,9 @@ public class ServicesDaoImpl implements ServicesDao {
             
 		} else if("2517350".equals(codigoMateria)) {//FORMAC CIUDADANA Y CONST.
 			
-			grupos.add(new Grupo("01",30,20,"virtual","m 2-4","mariana"));
-            grupos.add(new Grupo("02",30,15,"virtual","l 8-10","angelica"));
-            grupos.add(new Grupo("02",30,10,"virtual","w 10-12","pedro"));
+			grupos.add(new Grupo("01",30,20,"virtual","m 2-4","Laura Yaneth Garcia"));
+            grupos.add(new Grupo("02",30,15,"virtual","l 8-10","Angelica Sanchez"));
+            grupos.add(new Grupo("02",30,10,"virtual","w 10-12","Juan Fernando Londoño"));
             
 		}
         
@@ -128,8 +128,8 @@ public class ServicesDaoImpl implements ServicesDao {
     public List<Impedimento> obtenerImpedimentos(String cedulaEstudiante, Long programa) {
         List<Impedimento> impedimentos = new ArrayList<Impedimento>();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            impedimentos.add(new Impedimento((long)20161,"Cartera","No pago de matricula"));
-            impedimentos.add(new Impedimento((long)20161,"Biblioteca","No ha devuelto libro"));
+            impedimentos.add(new Impedimento((long)20171,"Cartera","No pago de matricula"));
+            impedimentos.add(new Impedimento((long)20171,"Biblioteca","No ha devuelto libro"));
         }
         return impedimentos;
     }
