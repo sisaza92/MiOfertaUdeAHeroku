@@ -20,8 +20,8 @@ import co.edu.udea.mioferta.dto.Estudiante;
  */
 public class ServicesDaoImpl implements ServicesDao {
     // cedulas quemadas para suponer que estan el la base de datos
-    private  String cedulaEstudiante1 = "101700";
-    private  String cedulaEstudiante2 = "101701";
+    private  String cedulaEstudiante1 = "1036400102";
+    private  String cedulaEstudiante2 = "1036397327";
     
     //Ojo validar los datos que ingresan 
     
@@ -29,8 +29,8 @@ public class ServicesDaoImpl implements ServicesDao {
         
         List<Programa> programas = new ArrayList();
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            programas.add(new Programa((long) 504, "Ingeniería de Sistemas", "Activo"));
-            programas.add(new Programa((long) 104, "Administración de Empresas", "Cancelado"));
+            programas.add(new Programa((long) 504, "Ingenieria de Sistemas", "Activo"));
+            programas.add(new Programa((long) 104, "Administracion de Empresas", "Cancelado"));
         }else{
             if (cedulaEstudiante.equals(cedulaEstudiante2)) {
                 programas.add(new Programa((long) 533, "Ingeniería civil", "Activo"));
@@ -46,10 +46,10 @@ public class ServicesDaoImpl implements ServicesDao {
     	Estudiante estudiante = null;
         
         if (cedulaEstudiante.equals(cedulaEstudiante1)) {
-            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "", "");
+            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "26/05/1992", "santiago.ramirez@udea.edu.co");
         }else{
             if (cedulaEstudiante.equals(cedulaEstudiante2)) {
-                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "", "");
+                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "26/05/1992", "ccamilo.isaza@udea.edu.co");
             }
             // no existe esa cedula en la base de datos
         }
@@ -81,26 +81,24 @@ public class ServicesDaoImpl implements ServicesDao {
         // hacer una estructura case of codigoMateria
         if ("2508107".equals(codigoMateria)) {//LOGICA Y REPRESENTACION I
         	
-        	grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","juan"));
-            grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","maria"));
-            grupos.add(new Grupo("03",30,20,"21-310","ls 12-2","pedro"));
+        	grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","Roberto FLorez Rueda"));
+            grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","Fernando Perez"));
+            grupos.add(new Grupo("03",30,20,"21-310","ls 12-2","Efain Oviedo"));
             
 		} else if("2508111".equals(codigoMateria)) {//MATEMATICAS DISCRETAS I
 			
-			grupos.add(new Grupo("01",30,25,"19-220","wv 6-8","sierra"));
-            grupos.add(new Grupo("02",30,25,"19-220","wv 6-8","sierra"));
+			grupos.add(new Grupo("01",30,25,"19-220","wv 6-8","Carlos Mario Sierra"));
+            grupos.add(new Grupo("02",30,25,"19-220","wv 6-8","Gabriel Uribe"));
 		
 		} else if("2539100".equals(codigoMateria)) {//LECTOESCRITURA
 			
-			grupos.add(new Grupo("01",30,30,"19-220","wv 10-12","pepe"));
-            grupos.add(new Grupo("02",30,30,"19-222","mj 8-10","yeye"));
-            grupos.add(new Grupo("02",30,30,"19-305","mj 8-10","isaza"));
+			grupos.add(new Grupo("01",30,30,"19-220","wv 10-12","Maria del Pilar Blandon"));
+            grupos.add(new Grupo("02",30,30,"19-222","mj 8-10","Juan Carlos Velez"));
             
 		} else if("2536200".equals(codigoMateria)) {//FISICA MECANICA
 			
-			grupos.add(new Grupo("01",30,20,"19-207","mj 10-12","arenas bernardo"));
-            grupos.add(new Grupo("02",30,15,"19-310","mw 8-10","sarazola"));
-            grupos.add(new Grupo("02",30,10,"19-220","mj 2-4","edwar"));
+			grupos.add(new Grupo("01",30,20,"19-207","mj 10-12","Bernardo Arenas"));
+            grupos.add(new Grupo("02",30,15,"19-310","mw 8-10","Gustavo Otalvaro"));
             
 		} else if("2517350".equals(codigoMateria)) {//FORMAC CIUDADANA Y CONST.
 			
