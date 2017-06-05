@@ -20,8 +20,8 @@ import co.edu.udea.mioferta.dto.Estudiante;
  */
 public class ServicesDaoImpl implements ServicesDao {
     // cedulas quemadas para suponer que estan el la base de datos
-    private  String cedulaEstudiante1 = "1036400102";
-    private  String cedulaEstudiante2 = "1036397327";
+    private  String cedulaEstudiante1 = "101700";
+    private  String cedulaEstudiante2 = "101701";
     
     //Ojo validar los datos que ingresan 
     
